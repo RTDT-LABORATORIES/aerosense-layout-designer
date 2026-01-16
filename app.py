@@ -69,7 +69,7 @@ def main():
             
             with col1:
                 pos = st.number_input(
-                    "Position",
+                    "Position [x/chord]",
                     min_value=0.0,
                     max_value=1.0,
                     value=[0.05, 0.1, 0.55][i] if i < 3 else 0.5,
@@ -80,7 +80,7 @@ def main():
             
             with col2:
                 side = st.selectbox(
-                    "Side",
+                    "Airfoil side",
                     ["pressure", "suction"],
                     index=0 if i == 0 else 1,
                     key=f"side_{i}"
@@ -88,7 +88,7 @@ def main():
                 target_sides.append(side)
             
             isens = st.sidebar.number_input(
-                "Reference Sensor Index",
+                "Reference sensor index",
                 min_value=0,
                 max_value=23,
                 value=12,
