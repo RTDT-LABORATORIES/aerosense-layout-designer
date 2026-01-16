@@ -197,15 +197,6 @@ def main():
                     # Display figure
                     st.plotly_chart(fig, use_container_width=True)
                     
-                    # Download button for the image
-                    img_bytes = fig.to_image(format="png", width=1200, height=800, scale=2)
-                    st.download_button(
-                        label="📥 Download Layout Image",
-                        data=img_bytes,
-                        file_name="aerosense_layout.png",
-                        mime="image/png"
-                    )
-                    
                 except Exception as e:
                     st.error(f"❌ Error processing blade geometry: {str(e)}")
                     st.exception(e)
